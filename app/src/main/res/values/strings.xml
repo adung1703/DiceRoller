@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Dice Roller</string>
-    <string name="Name">Nguyễn Hữu Dũng \n 20215545 \n Click \"Roll\" to sowing dice</string>
     <string name="roll">ROLL</string>
 </resources>
