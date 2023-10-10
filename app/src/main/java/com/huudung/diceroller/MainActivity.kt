@@ -22,12 +22,15 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun rollDice() { //Update value of id.textView
-        val dice = Dice(6)
-        val diceRoll = dice.roll()
-        val diceImage: ImageView = findViewById(R.id.imageView)
+        val dice1 = Dice(6)
+        val dice2 = Dice(6)
 
+        val dice1Roll = dice1.roll()
+        val dice2Roll = dice2.roll()
+        val diceImage1: ImageView = findViewById(R.id.imageView)
+        val diceImage2: ImageView = findViewById(R.id.imageView2)
         // Update the ImageView with the correct drawable resource ID
-        val drawableResource = when(diceRoll) {
+        val drawableResource1 = when(dice1Roll) {
             1->R.drawable.dice_1
             2->R.drawable.dice_2
             3->R.drawable.dice_3
@@ -35,10 +38,21 @@ class MainActivity : AppCompatActivity() {
             5->R.drawable.dice_5
             else->R.drawable.dice_6
         }
-        diceImage.setImageResource(drawableResource)
+
+        val drawableResource2 = when(dice2Roll) {
+            1->R.drawable.dice_1
+            2->R.drawable.dice_2
+            3->R.drawable.dice_3
+            4->R.drawable.dice_4
+            5->R.drawable.dice_5
+            else->R.drawable.dice_6
+        }
+        diceImage1.setImageResource(drawableResource1)
+        diceImage2.setImageResource(drawableResource2)
 
         // Update the content description
-        diceImage.contentDescription = diceRoll.toString()
+        diceImage1.contentDescription = dice1Roll.toString()
+        diceImage2.contentDescription = dice2Roll.toString()
     }
 }
 
